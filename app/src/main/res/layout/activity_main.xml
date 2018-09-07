@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="login"
+            type="sand.www.mvvmdatabindingsimple.ViewModel.MainViewModel"/>
     </data>
 
     <LinearLayout
@@ -17,14 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hello World!"
-            android:hint="h"
+            android:hint="@{login.getUserEmailHint}"
             android:inputType="text"
             android:textSize="18sp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hello World!"
-            android:hint="h"
+            android:hint="@{login.getUserPasswordHint}"
             android:inputType="text"
             android:textSize="18sp" />
         <Button
