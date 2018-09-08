@@ -1,8 +1,11 @@
 package sand.www.mvvmdatabindingsimple.ViewModel;
 
-import sand.www.mvvmdatabindingsimple.Model.User;
+import android.databinding.BaseObservable;
 
-public class MainViewModel {
+import sand.www.mvvmdatabindingsimple.Model.User;
+import sand.www.mvvmdatabindingsimple.R;
+
+public class MainViewModel extends BaseObservable{
     private String userEmail,userEmailHint,
             userPassword, userPasswordHint;
 
@@ -17,6 +20,7 @@ public class MainViewModel {
 
     public void setUserEmail(String userEmail) {
         this.userEmail = userEmail;
+        notifyPropertyChanged(R.id.edtEmail);
     }
 
     public String getUserEmailHint() {
@@ -33,6 +37,7 @@ public class MainViewModel {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+        notifyPropertyChanged(R.id.edtPassword);
     }
 
     public String getUserPasswordHint() {

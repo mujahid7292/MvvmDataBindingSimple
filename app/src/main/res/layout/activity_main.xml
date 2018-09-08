@@ -5,8 +5,11 @@
 
     <data>
         <variable
-            name="login"
+            name="viewModel"
             type="sand.www.mvvmdatabindingsimple.ViewModel.MainViewModel"/>
+        <variable
+            name="presenter"
+            type="sand.www.mvvmdatabindingsimple.Presenter.MainPresenter"/>
     </data>
 
     <LinearLayout
@@ -16,23 +19,26 @@
         tools:context=".MainActivity">
 
         <EditText
+            android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:hint="@{login.getUserEmailHint}"
+            android:hint="@{viewModel.getUserEmailHint()}"
+            android:text="@={viewModel.userEmail}"
             android:inputType="text"
             android:textSize="18sp" />
         <EditText
+            android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:hint="@{login.getUserPasswordHint}"
+            android:hint="@{viewModel.getUserPasswordHint()}"
+            android:text="@={viewModel.userPassword}"
             android:inputType="text"
             android:textSize="18sp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"/>
+            android:text="Login"
+            android:onClick="@{(v)->presenter.onClickUserLogIn()}"/>
 
     </LinearLayout>
 
